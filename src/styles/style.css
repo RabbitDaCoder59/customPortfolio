@@ -1,0 +1,53 @@
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+
+/* Tailwind directives and your custom CSS */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Your custom CSS */
+.active {
+  background: linear-gradient(
+    97deg,
+    rgb(250, 82, 82) 0%,
+    rgb(221, 36, 118) 100%
+  );
+}
+
+.cvBtn {
+  background: linear-gradient(
+    97deg,
+    rgb(250, 82, 82) 0%,
+    rgb(221, 36, 118) 100%
+  );
+  @apply rounded-full flex items-center justify-center gap-2 w-full min-w-[200px] h-[50px] text-white;
+}
+.customLinear {
+  background: linear-gradient(
+    97deg,
+    rgb(250, 82, 82) 0%,
+    rgb(221, 36, 118) 100%
+  );
+}
+
+.input {
+  @apply border-b outline-none bg-transparent;
+}
+.label {
+  @apply mb-1 text-lg font-semibold;
+}
+.inputs {
+  @apply flex flex-col mb-10;
+}
+.submitBtn {
+  @apply border border-black w-[133px] h-[50px] rounded-xl text-lg font-semibold;
+}
+.submitBtn:hover {
+  background: linear-gradient(
+    97deg,
+    rgb(250, 82, 82) 0%,
+    rgb(221, 36, 118) 100%
+  );
+  @apply text-white border-0;
+}
