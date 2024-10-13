@@ -1,7 +1,6 @@
 import { FaRegLightbulb } from "react-icons/fa";
 import client1 from "../assets/clients/client-logo-1.png"
 import client2 from "../assets/clients/client-logo-2.png"
-import client3 from "../assets/clients/client-logo-3.png"
 import client4 from "../assets/clients/client-logo-4.png"
 interface Item {
   id: number;
