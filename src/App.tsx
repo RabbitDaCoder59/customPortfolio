@@ -11,6 +11,7 @@ import Resume from "./pages/Resume";
 import Works from "./pages/Works";
 import Blogs from "./pages/Blogs";
 import Contact from "./pages/Contact";
+import BlogDetails from "./pages/BlogDetails";
 const App: React.FC = () => {
   const [mode, setMode] = useState(false);
   const toggleMode = () => {
@@ -34,6 +35,7 @@ const App: React.FC = () => {
               <Route path="/resume" element={<Resume />} />
               <Route path="/work" element={<Works />} />
               <Route path="/blog" element={<Blogs />} />
+              <Route path="/blog/:id" element={<BlogDetails />} />
               <Route path="/contact" element={<Contact />} />
             </Routes>
           </div>

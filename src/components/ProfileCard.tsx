@@ -1,5 +1,4 @@
 import React from "react";
-import profileImg from "../assets/Images/Profile/parson-img.png";
 import {
   FaFacebookF,
   FaInstagram,
@@ -18,7 +17,7 @@ const ProfileCard: React.FC = () => {
         <div className="w-full flex justify-center items-center mb-10">
           <div className="flex flex-col items-center">
             <img
-              src={profileImg}
+              src={"https://fakeimg.pl/250x250?text=250x250&font=noto"}
               className="w-[210px] h-[210px] rounded-2xl "
               alt=""
             />
