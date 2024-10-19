@@ -2,13 +2,18 @@ import React from "react";
 import Heading from "../components/Heading";
 import Footer from "../components/Footer";
 import "../styles/style.css"
-const Contact: React.FC = () => {
+
+
+interface HeaderProps {
+  mode: boolean;
+}
+const Contact: React.FC<HeaderProps> = ({mode}) => {
   return (
-    <div className="lg:w-[800px] w-full h-full bg-white mt-8 rounded-xl  font-poppins">
+    <div className={`lg:w-[800px] w-full h-full ${mode?"bg-black text-white":"bg-white "} mt-8 rounded-xl  font-poppins`}>
       <div className="lg:py-8 lg:px-10 px-4 py-3 pt-7">
         <Heading text="Contact" />
 
-        <div className="h-full rounded-3xl py-12 px-8 bg-[#F8FBFB] ">
+        <div className={`h-full rounded-3xl py-12 px-8  ${mode?"bg-black text-white":"bg-[#F8FBFB] "} `}>
           <h1 className="text-3xl">
             I'm always open to discussing produuct design work or partnerships.
           </h1>
@@ -30,7 +35,7 @@ const Contact: React.FC = () => {
           </form>
         </div>
       </div>
-      <Footer />
+      <Footer mode={mode} />
     </div>
   );
 };

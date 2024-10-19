@@ -6,7 +6,12 @@ import "../App.css";
 import "../styles/style.css";
 import { Clients } from "../data/data";
 import Footer from "../components/Footer";
-const About: React.FC = () => {
+
+
+interface HeaderProps {
+  mode: boolean;
+}
+const About: React.FC<HeaderProps> = ({mode}) => {
   const settings = {
     autoplay: true,
     autoplaySpeed: 2000,
@@ -28,10 +33,10 @@ const About: React.FC = () => {
     ],
   };
   return (
-    <div className="lg:w-[800px] w-full h-full lg:h-[965px] bg-white mt-8 rounded-xl  font-poppins">
+    <div className={`lg:w-[800px] w-full h-full ${mode?"bg-black text-white":"bg-white"}  mt-8 rounded-xl  font-poppins`}>
       <div className="lg:py-14 lg:px-10 py-10 px-5">
         <Heading text="About" />
-        <div className="text-lg text-[#44566c] w-[90%] my-5 leading-8 ">
+        <div className={`"text-lg  w-[90%] my-5 leading-8 "`}>
           I'm Creative Director and UI/UX Designer from Sydney, Australia,
           working in web development and print media. I enjoy turning complex
           problems into simple, beautiful and intuitive designs. My aim is to
@@ -43,12 +48,12 @@ const About: React.FC = () => {
           <h1 className="lg:text-3xl text-2xl font-medium"> what I do!</h1>
 
           <div className="">
-            <Carousel />
+            <Carousel mode={mode} />
           </div>
         </div>
       </div>
       {/* Clients */}
-      <div className="w-full h-full lg:h-[250px] bg-[#F8FBFB] ">
+      <div className={`w-full h-full lg:h-[250px]  ${mode?"bg-[#272828] text-[#a6a6a6]":"bg-[#F8FBFB]"} `}>
         <h1 className="text-3xl font-semibold text-center py-5">Clients</h1>
 
         <div className="lg:p-4 lg:ml-10 ml-[6.5rem] mt-3">
@@ -68,7 +73,7 @@ const About: React.FC = () => {
         </div>
       </div>
       {/* footer */}
-      <Footer/>
+      <Footer mode={mode} />
     </div>
   );
 };

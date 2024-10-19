@@ -1,6 +1,8 @@
 import React from "react";
-
-const SkillsAndKnowledge: React.FC = () => {
+interface HeaderProps {
+  mode: boolean;
+}
+const SkillsAndKnowledge: React.FC<HeaderProps> = ({ mode })=> {
   const skills = [
     { name: "Web Design", level: "85%", color: "bg-red-500" },
     { name: "Mobile App", level: "55%", color: "bg-purple-500" },
@@ -46,7 +48,7 @@ const SkillsAndKnowledge: React.FC = () => {
           {knowledge.map((item, index) => (
             <div
               key={index}
-              className="lg:px-5 px-3 py-2 bg-gray-100 text-[#44566c] rounded-lg text-xs lg:text-sm"
+              className={`lg:px-5 px-3 py-2 ${mode?"bg-[#272828] text-[#a6a6a6]":"bg-gray-100 text-[#44566c]"}  rounded-lg text-xs lg:text-sm`}
             >
               {item}
             </div>

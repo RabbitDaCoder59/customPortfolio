@@ -26,17 +26,17 @@ const App: React.FC = () => {
         <Header toggleMode={toggleMode} mode={mode} />
         <main className="lg:px-16 px-5 flex flex-col lg:flex-row relative justify-between">
           <div className=" w-full h-full lg:sticky top-10">
-          <ProfileCard />
+          <ProfileCard mode={mode}/>
           </div>
           <div className="flex flex-col">
-            <Navbar />
+            <Navbar mode={mode}  />
             <Routes>
-              <Route path="/" element={<About />} />
-              <Route path="/resume" element={<Resume />} />
-              <Route path="/work" element={<Works />} />
-              <Route path="/blog" element={<Blogs />} />
-              <Route path="/blog/:id" element={<BlogDetails />} />
-              <Route path="/contact" element={<Contact />} />
+              <Route path="/" element={<About mode={mode}/>} />
+              <Route path="/resume" element={<Resume mode={mode}/>} />
+              <Route path="/work" element={<Works mode={mode}/>} />
+              <Route path="/blog" element={<Blogs mode={mode} />} />
+              <Route path="/blog/:id" element={<BlogDetails mode={mode}/>} />
+              <Route path="/contact" element={<Contact mode={mode} />} />
             </Routes>
           </div>
         </main>

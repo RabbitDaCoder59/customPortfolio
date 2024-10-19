@@ -26,7 +26,7 @@ const Header: React.FC<HeaderProps> = ({ toggleMode, mode }) => {
 
   // Helper function to determine active link
   const isActive = (path: string) =>
-    location.pathname === path ? "text-[#fa5252] text-white" : "text-[#44566c]";
+    location.pathname === path ? "text-[#fa5252]" : "text-[#44566c]";
 
   return (
     <header className="relative">
@@ -85,9 +85,9 @@ const Header: React.FC<HeaderProps> = ({ toggleMode, mode }) => {
       </nav>
       {isOpen && (
         <div className="w-full max-w-[390px] h-[200px] bg-white absolute z-30 left-3 top-20 rounded-xl px-6 py-5">
-          <div className="mb-3" onClick={toggleMenu} >
+          <div className="mb-3" onClick={toggleMenu}>
             <Link
-              className={` rounded-2xl flex items-center ${isActive("/")}`}
+              className={` rounded-2xl gap-2 flex items-center ${isActive("/")}`}
               to="/"
             >
               <FaRegAddressCard className="text-xl" />
@@ -98,7 +98,7 @@ const Header: React.FC<HeaderProps> = ({ toggleMode, mode }) => {
           </div>
           <div className="mb-3" onClick={toggleMenu}>
             <Link
-              className={` rounded-2xl flex items-center ${isActive(
+              className={` rounded-2xl gap-2 flex items-center ${isActive(
                 "/resume"
               )}`}
               to="/resume"
@@ -111,7 +111,7 @@ const Header: React.FC<HeaderProps> = ({ toggleMode, mode }) => {
           </div>
           <div className="mb-3" onClick={toggleMenu}>
             <Link
-              className={` rounded-2xl flex items-center ${isActive("/work")}`}
+              className={` rounded-2xl gap-2 flex items-center ${isActive("/work")}`}
               to="/work"
             >
               <FaBriefcase className="text-xl" />
@@ -122,7 +122,7 @@ const Header: React.FC<HeaderProps> = ({ toggleMode, mode }) => {
           </div>
           <div className="mb-3" onClick={toggleMenu}>
             <Link
-              className={` rounded-2xl flex items-center ${isActive("/blog")}`}
+              className={` rounded-2xl gap-2 flex items-center ${isActive("/blog")}`}
               to="/blog"
             >
               <FaRegNewspaper className="text-xl" />
@@ -133,7 +133,7 @@ const Header: React.FC<HeaderProps> = ({ toggleMode, mode }) => {
           </div>
           <div className="mb-3" onClick={toggleMenu}>
             <Link
-              className={` rounded-2xl flex items-center ${isActive(
+              className={` rounded-2xl gap-2 flex items-center ${isActive(
                 "/contact"
               )}`}
               to="/contact"

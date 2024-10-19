@@ -1,6 +1,6 @@
-# 8th Century Tech
+# DroineTech Portfoilio web page
 
-Welcome to the official repository of 8th Century Tech, a modern technology company focused on delivering top-notch creative and technological solutions to clients worldwide. This documentation provides a comprehensive guide to the project's structure, components, and setup instructions.
+Welcome to the official repository of DroineTech Portfoilio, a modern technology company focused on delivering top-notch creative and technological solutions to clients worldwide. This documentation provides a comprehensive guide to the project's structure, components, and setup instructions.
 
 ## Table of Contents
 
@@ -16,7 +16,7 @@ Welcome to the official repository of 8th Century Tech, a modern technology comp
 
 ## Introduction
 
-8th Century Tech is a technology firm dedicated to providing innovative solutions through custom software development, mobile and web applications, and fintech solutions. Our goal is to activate passion for creativity and guarantee top-notch service delivery to every client.
+DroineTech Portfoilio is a technology firm dedicated to providing innovative solutions through custom software development, mobile and web applications, and fintech solutions. Our goal is to activate passion for creativity and guarantee top-notch service delivery to every client.
 
 ## Project Structure
 
@@ -34,10 +34,9 @@ The project's file structure is organized as follows:
 │   │   ├── svg2.png
 │   │   ├── svg3.png
 │   │   ├── svg4.png
-│   │   ├── svg5.png
+│   │   |
 │   │   ├── portfolioImg.png
-│   │   ├── worksImg1.png
-│   │   ├── worksImg2.png
+│   │   ├── worksImg1.png   │   ├── worksImg2.png
 │   │   ├── worksImg3.png
 │   │   ├── worksImg4.png
 │   │   ├── worksImg5.png

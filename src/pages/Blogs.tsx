@@ -2,8 +2,13 @@ import React, { useState } from "react";
 import Heading from "../components/Heading";
 import { blogs } from "../data/data";
 import Pagination from "../components/Pagination"; // Import the pagination component
+import { Link } from "react-router-dom";
+import Footer from "../components/Footer";
 
-const Blogs: React.FC = () => {
+interface HeaderProps {
+  mode: boolean;
+}
+const Blogs: React.FC<HeaderProps> = ({ mode }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const blogsPerPage = 6; // Display 6 blogs per page
 
@@ -20,15 +25,24 @@ const Blogs: React.FC = () => {
   };
 
   return (
-    <div className="lg:w-[800px] w-full h-full bg-white mt-8 rounded-xl font-poppins">
+    <div
+      className={`lg:w-[800px] w-full h-full ${
+        mode ? "bg-black text-white" : "bg-white "
+      } mt-8 rounded-xl font-poppins`}
+    >
       <div className="lg:py-14 lg:px-10 px-2 py-7">
         <Heading text="Blogs" />
         <div className="container mx-auto p-6">
           <div className="grid md:grid-cols-2 gap-8">
             {currentBlogs.map((blog) => (
-              <div
+              <Link
+                to={`/blog/${blog.id}`}
                 key={blog.id}
-                className="bg-white rounded-lg shadow-md p-4 border border-gray-100"
+                className={`${
+                  mode
+                    ? "bg-black text-white"
+                    : "bg-white shadow-md border border-gray-100"
+                } shadow-custom-yelow  rounded-lg  p-4 `}
               >
                 <img
                   src={blog.image}
@@ -36,14 +50,18 @@ const Blogs: React.FC = () => {
                   className="w-full h-48 object-cover rounded-lg"
                 />
                 <div className="mt-4">
-                  <p className="text-gray-500 text-sm">
+                  <p
+                    className={`${
+                      mode ? " text-white" : " text-gray-500 "
+                    } text-sm`}
+                  >
                     {blog.date} <span className="mx-2">•</span> {blog.category}
                   </p>
-                  <h2 className="text-xl font-semibold text-gray-800 mt-2">
+                  <h2 className={`text-xl font-semibold mt-2 ${mode?" text-white hover:text-blue-700":" text-gray-800 "}`}>
                     {blog.title}
                   </h2>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
 
@@ -52,9 +70,11 @@ const Blogs: React.FC = () => {
             currentPage={currentPage}
             totalPages={totalPages}
             onPageChange={handlePageChange}
+            mode={mode}
           />
         </div>
       </div>
+      <Footer mode={mode} />
     </div>
   );
 };
